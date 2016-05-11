@@ -1,7 +1,7 @@
 **An angular JS directive for 2 level cascade select dropdown**
 
 Use:
-The directive can be called from HTML as: <cascade-select></cascade-select>
+The directive can be called from HTML as: ```<cascade-select></cascade-select>```
 
 Options are:
 
