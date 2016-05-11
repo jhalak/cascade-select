@@ -1,0 +1,42 @@
+<div class="cascade-select">
+    <input ng-show="disabled" type="text" disabled class="form-control" value="{{outputModel[displayName]}}"/>
+    <div class="dropdown form-control cascade-dropdown" ng-show="!disabled">
+    <i
+        ng-show="outputModel.id"
+        ng-click="deleteSelected()"
+        class="glyphicon glyphicon-remove-sign pull-right icon-delete"
+        area-hidden="true"></i>
+
+    <div id="cascadeLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{outputModel[displayName]}}
+        <span ng-show="outputModel.id === undefined || outputModel.id === null">Select</span>
+        <i class="glyphicon glyphicon-chevron-down pull-right" area-hidden="true"></i>
+    </div>
+    <ul class="dropdown-menu parent" aria-labelledby="cascadeLabel">
+        <li style="padding: 0 5px"><input ng-model="searchTerm" type="text" class="form-control" placeholder="Search ..."/></li>
+        <li ng-repeat="parent in inputModel | cascadeFilter:searchTerm:displayName" ng-class="{selected: parent.id === outputModel.id}">
+            <i class="glyphicon glyphicon-ok tickMark"></i>
+            <span class="parent-category-name category-name" ng-click="handleSelection(parent)">{{parent[displayName]}}</span>
+            <i
+                    ng-show="parent.children.data.length > 0"
+                    class="glyphicon glyphicon-chevron-down children-viewer"
+                    area-hidden="true"
+                    ng-mouseover="hoveredItem[parent.id] = true"
+                    ng-mouseleave="hoveredItem[parent.id] = false">
+
+            </i>
+            <ul class="children"
+                ng-show="hoveredItem[parent.id] === true || isChildSelected(parent)"
+                ng-mouseover="hoveredItem[parent.id] = true"
+                ng-mouseleave="hoveredItem[parent.id] = false">
+
+                <li ng-repeat="child in parent.children.data" ng-click="handleSelection(child)" ng-class="{selected: child.id === outputModel.id}">
+                    <i class="glyphicon glyphicon-ok tickMark"></i>
+                    <span class="category-name">{{child[displayName]}}</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <link href="/coach/app/common/directives/cascade-select/cascadeSelect.css" rel="stylesheet">
+</div>
+</div>

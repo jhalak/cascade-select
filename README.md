@@ -1,0 +1,1 @@
+An angular JS directive for 2 level cascade select dropdown

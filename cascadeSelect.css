@@ -1,0 +1,91 @@
+.cascade-select .cascade-dropdown{
+    padding: 0 !important;
+    position: relative;
+}
+
+#cascadeLabel {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.cascade-select li {
+    padding: 5px 0;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.cascade-select li:hover {
+    background-color: #E4F3FA;
+}
+
+.cascade-select ul.parent {
+    width: 100%;
+}
+
+.cascade-select ul.children {
+    margin: 0;
+    padding: 0;
+}
+
+.cascade-select ul.children li {
+    list-style: none;
+    padding-right: 0;
+}
+
+.cascade-select li ul.children li:hover {
+    background-color: #fff;
+}
+
+.children-viewer {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    padding-left: 40px;
+    padding-right: 15px;
+    height: 30px;
+}
+
+.cascade-select .category-name {
+    padding: 5px;
+}
+
+.cascade-select .children .category-name {
+    padding-left: 25px;
+}
+
+.cascade-select .parent-category-name {
+    margin-right: 10px;
+    display: block;
+}
+
+.cascade-select .tickMark {
+    position: absolute;
+    left: 5px;
+    top: 12px;
+    display: none;
+}
+
+.cascade-select ul li ul li .tickMark {
+    left: 25px;
+    top: 7px;
+}
+
+.cascade-select li.selected {
+    padding-left: 20px;
+}
+
+.cascade-select li.selected .tickMark {
+    display: block;
+}
+
+.cascade-select ul li.selected ul li .tickMark {
+    display: none;
+}
+
+.icon-delete {
+    position: absolute;
+    cursor: pointer;
+    right: 30px;
+    top: 10px;
+}
